@@ -6,6 +6,13 @@ import java.util.concurrent.CompletableFuture
 
 interface ExecutionService {
     /**
+     * Verifies that the given resource [id] is of type [expectedType].
+     *
+     * @throws IllegalArgumentException If this resource does not exist
+     */
+    fun verifyResource(id: String, expectedType: Class<GeneralResource>): CompletableFuture<Boolean>
+
+    /**
      * Calls the operating system to allocate a resource with a given [id].
      * If this method succeeds, the resource is non-preemptive, i.e., the system cannot hijack it from the allocating
      * thread.
