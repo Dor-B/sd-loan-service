@@ -10,7 +10,7 @@ interface ExecutionService {
      *
      * @throws IllegalArgumentException If this resource does not exist
      */
-    fun verifyResource(id: String): CompletableFuture<Class<GeneralResource>>
+    fun verifyResource(id: String): CompletableFuture<Class<out GeneralResource>>
 
     /**
      * Calls the operating system to allocate a resource with a given [id].
