@@ -1,7 +1,7 @@
-package il.ac.technion.cs.softwaredesign.execution
+package il.ac.technion.cs.softwaredesign.loan
 
 import dev.misfitlabs.kotlinguice4.KotlinModule
-import il.ac.technion.cs.softwaredesign.execution.impl.LoanServiceImpl
+import il.ac.technion.cs.softwaredesign.loan.impl.LoanServiceImpl
 
 class LoanServiceModule : KotlinModule() {
     override fun configure() {
