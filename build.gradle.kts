@@ -2,10 +2,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.4.30"
+    `maven-publish`
 }
 
 group = "il.ac.technion.cs.softwaredesign"
-version = "1.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -20,4 +21,15 @@ dependencies {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "il.ac.technion.cs.softwaredesign"
+            artifactId = "sd-loan-service"
+            version = "1.0.1"
+            from(components["java"])
+        }
+    }
 }
