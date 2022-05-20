@@ -1,7 +1,6 @@
 package il.ac.technion.cs.softwaredesign.loan.impl
 
 import il.ac.technion.cs.softwaredesign.loan.LoanService
-import il.ac.technion.cs.softwaredesign.loan.GeneralBookLoanApproval
 import java.util.concurrent.CompletableFuture
 
 class LoanServiceImpl : LoanService {
