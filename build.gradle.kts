@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "il.ac.technion.cs.softwaredesign"
-version = "1.0.2"
+version = "1.0.3"
 
 repositories {
     mavenCentral()
@@ -28,7 +28,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "il.ac.technion.cs.softwaredesign"
             artifactId = "sd-loan-service"
-            version = "1.0.2"
+            version = "1.0.3"
             from(components["java"])
         }
     }
