@@ -5,23 +5,15 @@ import java.util.concurrent.CompletableFuture
 
 
 interface LoanService {
-    /**
-     * Verifies the existence of the given book [id], returning it's type (without actually loaning it).
-     *
-     * @throws IllegalArgumentException If this book does not exist in the library
-     */
-    fun verifyBook(id: String): CompletableFuture<Class<out GeneralBookLoanApproval>>
 
     /**
-     * Marks a single book as loaned in the library (so now there are -1 available books with this id),
-     * and returns an approval for a loan which the user can use to physically get the book in the library.
+     * Marks a single book as loaned in the library (for registry)
      *
-     * @throws IllegalArgumentException If the book is already loaned or does not exist.
      */
-    fun loanBook(id: String): CompletableFuture<GeneralBookLoanApproval>
+    fun loanBook(id: String): CompletableFuture<Unit>
 
     /**
-     * Makes the single book available again (so now there are +1 available books with this id)
+     * Marks the single book as available again (for registry)
      */
-    fun returnBook(bookLoanApproval: GeneralBookLoanApproval): CompletableFuture<Unit>
+    fun returnBook(id: String): CompletableFuture<Unit>
 }
